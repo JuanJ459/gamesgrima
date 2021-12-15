@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Inicio</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="%PUBLIC_URL%/images/favicon.svg" />
+
+    <!-- ========================= CSS index here ========================= -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/animate.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/tiny-slider.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/glightbox.min.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/main.css" />
+
+    <!-- ========================= CSS Registro here ========================= -->
+
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/estilosR.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/estilosIS.css" />
+
+    <!-- ========================= perfiles - dashboard ========================= -->
+    <!-- Fontfaces CSS-->
+    <link href="%PUBLIC_URL%/css/font-face.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="%PUBLIC_URL%/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="%PUBLIC_URL%/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="%PUBLIC_URL%/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="%PUBLIC_URL%/css/theme2.css" rel="stylesheet" media="all">
+
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+            <script src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+            <script src="%PUBLIC_URL%/js/wow.min.js"></script>
+            <script src="%PUBLIC_URL%/js/tiny-slider.js"></script>
+            <script src="%PUBLIC_URL%/js/glightbox.min.js"></script>
+            <script src="%PUBLIC_URL%/js/count-up.min.js"></script>
+            <script src="%PUBLIC_URL%/js/main.js"></script>
+            <script>
+              const finaleDate = new Date("February 15, 2023 00:00:00").getTime();
+
+              const timer = () => {
+              const now = new Date().getTime();
+              let diff = finaleDate - now;
+              if (diff < 0) {
+                  document.querySelector('.alert').style.display = 'block';
+                  document.querySelector('.container').style.display = 'none';
+              }
+
+              let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+              let hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+              let minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+              let seconds = Math.floor(diff % (1000 * 60) / 1000);
+
+              days <= 99 ? days = `0${days}` : days;
+              days <= 9 ? days = `00${days}` : days;
+              hours <= 9 ? hours = `0${hours}` : hours;
+              minutes <= 9 ? minutes = `0${minutes}` : minutes;
+              seconds <= 9 ? seconds = `0${seconds}` : seconds;
+
+              document.querySelector('#days').textContent = days;
+              document.querySelector('#hours').textContent = hours;
+              document.querySelector('#minutes').textContent = minutes;
+              document.querySelector('#seconds').textContent = seconds;
+
+              }
+              timer();
+              setInterval(timer, 1000);
+          </script>
+          <script src="%PUBLIC_URL%/vendor/jquery-3.2.1.min.js"></script>
+                <!-- Bootstrap JS-->
+                <script src="%PUBLIC_URL%/vendor/bootstrap-4.1/popper.min.js"></script>
+                <script src="%PUBLIC_URL%/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+                <!-- Vendor JS       -->
+                <script src="%PUBLIC_URL%/vendor/slick/slick.min.js">
+                </script>
+                <script src="%PUBLIC_URL%/vendor/wow/wow.min.js"></script>
+                <script src="%PUBLIC_URL%/vendor/animsition/animsition.min.js"></script>
+                <script src="%PUBLIC_URL%/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+                </script>
+                <script src="%PUBLIC_URL%/vendor/counter-up/jquery.waypoints.min.js"></script>
+                <script src="%PUBLIC_URL%/vendor/counter-up/jquery.counterup.min.js">
+                </script>
+                <script src="%PUBLIC_URL%/vendor/circle-progress/circle-progress.min.js"></script>
+                <script src="%PUBLIC_URL%/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+                <script src="%PUBLIC_URL%/vendor/chartjs/Chart.bundle.min.js"></script>
+                <script src="%PUBLIC_URL%/vendor/select2/select2.min.js">
+                </script>
+
+                <!-- Main JS-->
+                <script src="%PUBLIC_URL%/js/main2.js"></script>
+
+
+
+    
+  </body>
+</html>
